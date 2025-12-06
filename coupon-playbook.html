@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Digital coupon platform for easy creation, distribution, and integration with CRM and POS. Personalized coupons with real-time analytics">
+    <title>Coupon Playbook - Mezzofy</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="shortcut icon" href="favicon.png">
+
+    <link rel="stylesheet" href="output.css">
+</head>
+<body class="bg-white text-dark-grey">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-md z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center gap-2">
+                        <img src="assets/images/logo.png" alt="Mezzofy Logo" class="h-8 md:h-10">
+                        <span class="md:hidden text-xl font-bold text-primary-black">MEZZOFY</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <!-- Products Dropdown -->
+                    <div class="dropdown">
+                        <button class="dropdown-trigger text-medium-grey hover:text-primary-black transition-colors">
+                            Products
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="coupon-management.html" class="dropdown-item">Coupon Management System</a>
+                            <a href="coupon-marketplace.html" class="dropdown-item">Coupon Marketplace</a>
+                            <a href="coupon-nfc.html" class="dropdown-item">Coupon NFC</a>
+                            <a href="coupon-marketing.html" class="dropdown-item">Coupon Marketing</a>
+                            <a href="coupon-wallet.html" class="dropdown-item">Coupon Wallet</a>
+                        </div>
+                    </div>
+
+                    <!-- Developer Dropdown -->
+                    <div class="dropdown">
+                        <button class="dropdown-trigger text-medium-grey hover:text-primary-black transition-colors">
+                            Developer
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="index.html#" class="dropdown-item">API Documentation</a>
+                            <a href="index.html#" class="dropdown-item">API Use Case</a>
+                        </div>
+                    </div>
+
+                    <!-- Resources Dropdown -->
+                    <div class="dropdown">
+                        <button class="dropdown-trigger text-medium-grey hover:text-primary-black transition-colors">
+                            Resources
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item text-primary-orange font-semibold">Coupon Playbook</a>
+                            <a href="index.html#" class="dropdown-item">Support</a>
+                        </div>
+                    </div>
+
+                    <!-- Company Dropdown -->
+                    <div class="dropdown">
+                        <button class="dropdown-trigger text-medium-grey hover:text-primary-black transition-colors">
+                            Company
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="about.html" class="dropdown-item">About Us</a>
+                            <a href="contact.html" class="dropdown-item">Contact Us</a>
+                            <a href="news-press.html" class="dropdown-item">News & Press</a>
+                            <a href="investors.html" class="dropdown-item">Investors</a>
+                        </div>
+                    </div>
+
+                    <a href="index.html#contact" class="btn-primary">Get Started</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-primary-black focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-4 pt-2 pb-4 space-y-1">
+                <!-- Products Mobile Dropdown -->
+                <div class="mobile-dropdown">
+                    <button class="mobile-dropdown-trigger" data-dropdown="products">
+                        <span>Products</span>
+                        <svg class="w-4 h-4 transform transition-transform chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="mobile-dropdown-menu" data-menu="products">
+                        <a href="coupon-management.html" class="block py-2 text-sm text-medium-grey hover:text-primary-orange">Coupon Management System</a>
+                        <a href="index.html#" class="block py-2 text-sm text-medium-grey hover:text-primary-orange">Coupon Marketplace</a>
+                        <a href="coupon-nfc.html" class="block py-2 text-sm text-medium-grey hover:text-primary-orange">Coupon NFC</a>
+                        <a href="index.html#" class="block py-2 text-sm text-medium-grey hover:text-primary-orange">Coupon Marketing</a>
+                        <a href="index.html#" class="block py-2 text-sm text-medium-grey hover:text-primary-orange">Coupon Wallet</a>
+                    </div>
+                </div>
+
+                <!-- Developer Mobile Dropdown -->
+                <div class="mobile-dropdown">
+                    <button class="mobile-dropdown-trigger" data-dropdown="developer">
+                        <span>Developer</span>
+                        <svg class="w-4 h-4 transform transition-transform chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="mobile-dropdown-menu" data-menu="developer">
+                        <a href="index.html#" class="block py-2 text-sm text-medium-grey hover:text-primary-orange">API Documentation</a>
+                        <a href="index.html#" class="block py-2 text-sm text-medium-grey hover:text-primary-orange">API Use Case</a>
+                    </div>
+                </div>
+
+                <!-- Resources Mobile Dropdown -->
+                <div class="mobile-dropdown">
+                    <button class="mobile-dropdown-trigger" data-dropdown="resources">
+                        <span>Resources</span>
+                        <svg class="w-4 h-4 transform transition-transform chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="mobile-dropdown-menu" data-menu="resources">
+                        <a href="#" class="block py-2 text-sm text-primary-orange font-semibold">Coupon Playbook</a>
+                        <a href="index.html#" class="block py-2 text-sm text-medium-grey hover:text-primary-orange">Support</a>
+                    </div>
+                </div>
+
+                <!-- Company Mobile Dropdown -->
+                <div class="mobile-dropdown">
+                    <button class="mobile-dropdown-trigger" data-dropdown="company">
+                        <span>Company</span>
+                        <svg class="w-4 h-4 transform transition-transform chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="mobile-dropdown-menu" data-menu="company">
+                        <a href="about.html" class="block py-2 text-sm text-medium-grey hover:text-primary-orange">About Us</a>
+                        <a href="contact.html" class="block py-2 text-sm text-medium-grey hover:text-primary-orange">Contact Us</a>
+                        <a href="news-press.html" class="block py-2 text-sm text-medium-grey hover:text-primary-orange">News & Press</a>
+                        <a href="investors.html" class="block py-2 text-sm text-medium-grey hover:text-primary-orange">Investors</a>
+                    </div>
+                </div>
+
+                <a href="index.html#contact" class="block py-2 text-primary-orange font-semibold">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-gradient-to-br from-primary-black via-gray-900 to-primary-black">
+        <div class="section-container">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-white">
+                    THE ULTIMATE <span class="text-primary-orange">COUPON PLAYBOOK</span>
+                </h1>
+                <p class="text-xl sm:text-2xl md:text-3xl text-gray-100 mb-8">
+                    Smart Coupon Strategies for Every Stage of Growth
+                </p>
+                <p class="text-lg sm:text-xl text-gray-200 mb-10 max-w-3xl mx-auto">
+                    Coupons aren't just for the checkout page. In today's digital landscape, they're powerful tools to attract, convert, and retain customers.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="#why-mezzofy" class="btn-primary w-full sm:w-auto text-center">Request a Demo</a>
+                    <a href="#stage-1" class="btn-secondary w-full sm:w-auto text-center bg-white/10 text-white border-white hover:bg-white/20">Explore Strategies</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stage 1: Attract Potential Customers -->
+    <section id="stage-1" class="bg-light-grey">
+        <div class="section-container">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-5xl font-bold text-primary-black mb-4">
+                    Attract Potential Customers
+                </h2>
+                <p class="text-xl md:text-2xl text-medium-grey italic">
+                    Capture attention, spark interest, and bring new customers to your brand
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Flash Sales -->
+                <div class="feature-card">
+                    <div class="w-16 h-16 bg-primary-orange rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-primary-black">Flash Sales</h3>
+                    <p class="text-dark-grey leading-relaxed">
+                        Create urgency with limited-time offers that drive immediate action and attract deal-seekers to your brand.
+                    </p>
+                </div>
+
+                <!-- Branded Catalog -->
+                <div class="feature-card">
+                    <div class="w-16 h-16 bg-primary-orange rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-primary-black">Branded Catalog</h3>
+                    <p class="text-dark-grey leading-relaxed">
+                        Showcase your products with curated coupon catalogs that highlight your brand identity and value proposition.
+                    </p>
+                </div>
+
+                <!-- Social Sharing Coupon -->
+                <div class="feature-card">
+                    <div class="w-16 h-16 bg-primary-orange rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-primary-black">Social Sharing Coupon</h3>
+                    <p class="text-dark-grey leading-relaxed">
+                        Amplify your reach by incentivizing customers to share exclusive coupons with their networks on social media.
+                    </p>
+                </div>
+
+                <!-- Coupon Via Messenger -->
+                <div class="feature-card">
+                    <div class="w-16 h-16 bg-primary-orange rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-primary-black">Coupon Via Messenger</h3>
+                    <p class="text-dark-grey leading-relaxed">
+                        Engage customers directly through messaging platforms with personalized coupon offers that feel exclusive and immediate.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stage 2: Spark Interest & Drive Action -->
+    <section id="stage-2" class="bg-white">
+        <div class="section-container">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-5xl font-bold text-primary-black mb-4">
+                    Spark Interest & Drive Action
+                </h2>
+                <p class="text-xl md:text-2xl text-medium-grey italic">
+                    Encourage discovery, build trust, and engage customers
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Survey Coupon -->
+                <div class="feature-card">
+                    <div class="w-16 h-16 bg-primary-orange rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-primary-black">Survey Coupon</h3>
+                    <p class="text-dark-grey leading-relaxed">
+                        Gather valuable customer insights while rewarding participation with coupons, creating a win-win engagement opportunity.
+                    </p>
+                </div>
+
+                <!-- Free Trial Coupon -->
+                <div class="feature-card">
+                    <div class="w-16 h-16 bg-primary-orange rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-primary-black">Free Trial Coupon</h3>
+                    <p class="text-dark-grey leading-relaxed">
+                        Lower the barrier to entry by offering risk-free trials that let customers experience your product or service firsthand.
+                    </p>
+                </div>
+
+                <!-- Coupon Wallet -->
+                <div class="feature-card">
+                    <div class="w-16 h-16 bg-primary-orange rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-primary-black">Coupon Wallet</h3>
+                    <p class="text-dark-grey leading-relaxed">
+                        Build anticipation and repeat visits by allowing customers to save multiple coupons for future use in a centralized wallet.
+                    </p>
+                </div>
+
+                <!-- Chained Coupon -->
+                <div class="feature-card">
+                    <div class="w-16 h-16 bg-primary-orange rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-primary-black">Chained Coupon</h3>
+                    <p class="text-dark-grey leading-relaxed">
+                        Create progressive journeys where each coupon redemption unlocks the next, guiding customers through your product lineup.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stage 3: Keep Customers Coming Back -->
+    <section id="stage-3" class="bg-light-grey">
+        <div class="section-container">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-5xl font-bold text-primary-black mb-4">
+                    Keep Customers Coming Back
+                </h2>
+                <p class="text-xl md:text-2xl text-medium-grey italic">
+                    Build long-term relationships and turn customers into loyal advocates
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Lucky Draw Coupon -->
+                <div class="feature-card">
+                    <div class="w-16 h-16 bg-primary-orange rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-primary-black">Lucky Draw Coupon</h3>
+                    <p class="text-dark-grey leading-relaxed">
+                        Add excitement and gamification with random reward draws that keep customers engaged and eager to participate.
+                    </p>
+                </div>
+
+                <!-- Bundle Discount Coupon -->
+                <div class="feature-card">
+                    <div class="w-16 h-16 bg-primary-orange rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-primary-black">Bundle Discount Coupon</h3>
+                    <p class="text-dark-grey leading-relaxed">
+                        Increase average order value by offering attractive discounts on product bundles that complement each other.
+                    </p>
+                </div>
+
+                <!-- Occasion Coupon -->
+                <div class="feature-card">
+                    <div class="w-16 h-16 bg-primary-orange rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-primary-black">Occasion Coupon</h3>
+                    <p class="text-dark-grey leading-relaxed">
+                        Strengthen emotional connections by celebrating birthdays, anniversaries, and special moments with personalized offers.
+                    </p>
+                </div>
+
+                <!-- Value-Boost Coupon -->
+                <div class="feature-card">
+                    <div class="w-16 h-16 bg-primary-orange rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-primary-black">Value-Boost Coupon</h3>
+                    <p class="text-dark-grey leading-relaxed">
+                        Reward loyalty and encourage higher spending with tiered coupons that increase in value based on purchase amount or frequency.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Mezzofy Section -->
+    <section id="why-mezzofy" class="bg-white">
+        <div class="section-container">
+            <h2 class="text-3xl md:text-5xl font-bold text-primary-black mb-12 text-center">
+                Why Businesses Choose Mezzofy
+            </h2>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Efficient -->
+                <div class="feature-card text-center">
+                    <div class="w-20 h-20 bg-primary-orange rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-primary-black">Efficient</h3>
+                    <p class="text-dark-grey leading-relaxed">
+                        Seamless and flexible coupon creation & management - create in minutes, not hours
+                    </p>
+                </div>
+
+                <!-- First Party Data -->
+                <div class="feature-card text-center">
+                    <div class="w-20 h-20 bg-primary-orange rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-primary-black">First Party Data</h3>
+                    <p class="text-dark-grey leading-relaxed">
+                        Real-time tracking & analytics for data-driven decisions that boost your ROI
+                    </p>
+                </div>
+
+                <!-- Open API & Scalable -->
+                <div class="feature-card text-center">
+                    <div class="w-20 h-20 bg-primary-orange rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-primary-black">Open API & Scalable</h3>
+                    <p class="text-dark-grey leading-relaxed">
+                        Easy integrations with your marketing stack. Scalable solutions tailored for businesses of all sizes
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-gradient-to-br from-primary-black via-gray-900 to-primary-black">
+        <div class="section-container text-center">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+                Engage, Convert, and Retain Customers with the Right Coupon Strategy
+            </h2>
+            <p class="text-lg sm:text-xl text-gray-100 mb-10 max-w-3xl mx-auto">
+                Ready to transform your customer acquisition and retention with smart coupon strategies?
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="index.html#contact" class="btn-primary w-full sm:w-auto text-center">Contact Us to Get Started</a>
+                <a href="index.html#contact" class="btn-secondary w-full sm:w-auto text-center bg-white/10 text-white border-white hover:bg-white/20">Schedule a Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer & CTA -->
+    <footer id="contact" class="bg-primary-black text-white">
+        <div class="section-container">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
+                    Ready to power the future of commerce?
+                </h2>
+                <p class="text-lg sm:text-xl text-orange-200 mb-10 max-w-3xl mx-auto">
+                    Whether you are a merchant looking for maximum performance or a distributor seeking high-intent inventory, the Mezzofy Exchange Protocol is the indispensable infrastructure you need.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="index.html#contact" class="btn-primary w-full sm:w-auto text-center">Contact Sales (Enterprise)</a>
+                    <a href="index.html#" class="btn-secondary w-full sm:w-auto text-center bg-white/10 text-white border-white hover:bg-white/20">Developer Docs (API Access)</a>
+                </div>
+            </div>
+
+            <!-- Footer Links -->
+            <div class="border-t border-white/20 pt-12 mt-12">
+                <div class="grid md:grid-cols-4 gap-8 mb-8">
+                    <div>
+                        <h3 class="font-bold text-lg mb-4">Product</h3>
+                        <ul class="space-y-2 text-gray-200">
+                            <li><a href="index.html#" class="hover:text-white transition-colors">For Merchants</a></li>
+                            <li><a href="index.html#" class="hover:text-white transition-colors">For Distributors</a></li>
+                            <li><a href="index.html#" class="hover:text-white transition-colors">Bridge API</a></li>
+                            <li><a href="index.html#" class="hover:text-white transition-colors">Pricing</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg mb-4">Technology</h3>
+                        <ul class="space-y-2 text-gray-200">
+                            <li><a href="index.html#" class="hover:text-white transition-colors">Tokenization</a></li>
+                            <li><a href="index.html#" class="hover:text-white transition-colors">Security</a></li>
+                            <li><a href="index.html#" class="hover:text-white transition-colors">AI Integration</a></li>
+                            <li><a href="index.html#" class="hover:text-white transition-colors">Documentation</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg mb-4">Company</h3>
+                        <ul class="space-y-2 text-gray-200">
+                            <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+                            <li><a href="investors.html" class="hover:text-white transition-colors">Investors</a></li>
+                            <li><a href="index.html#" class="hover:text-white transition-colors">Careers</a></li>
+                            <li><a href="news-press.html" class="hover:text-white transition-colors">News & Press</a></li>
+                            <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg mb-4">Legal</h3>
+                        <ul class="space-y-2 text-gray-200">
+                            <li><a href="index.html#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                            <li><a href="index.html#" class="hover:text-white transition-colors">Terms of Service</a></li>
+                            <li><a href="index.html#" class="hover:text-white transition-colors">Cookie Policy</a></li>
+                            <li><a href="index.html#" class="hover:text-white transition-colors">Compliance</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="border-t border-white/20 pt-8 text-center text-gray-200">
+                    <p>&copy; 2024 Mezzofy. All rights reserved. Powering the future of digital commerce.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../src/js/main.js"></script>
+</body>
+</html>

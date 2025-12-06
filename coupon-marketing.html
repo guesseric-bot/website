@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sell digital vouchers, cash coupons, and gift cards online with Mezzofy. Full-service platform with payment integration and multi-channel distribution.">
+    <title>Coupon Marketing - Mezzofy</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="shortcut icon" href="favicon.png">
+
+    <link rel="stylesheet" href="output.css">
+</head>
+<body class="bg-white text-dark-grey">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-md z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center gap-2">
+                        <img src="assets/images/logo.png" alt="Mezzofy Logo" class="h-8 md:h-10">
+                        <span class="md:hidden text-xl font-bold text-primary-black">MEZZOFY</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <!-- Products Dropdown -->
+                    <div class="dropdown">
+                        <button class="dropdown-trigger text-medium-grey hover:text-primary-black transition-colors">
+                            Products
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="coupon-management.html" class="dropdown-item">Coupon Management System</a>
+                            <a href="coupon-marketplace.html" class="dropdown-item">Coupon Marketplace</a>
+                            <a href="coupon-nfc.html" class="dropdown-item">Coupon NFC</a>
+                            <a href="#" class="dropdown-item text-primary-orange font-semibold">Coupon Marketing</a>
+                            <a href="coupon-wallet.html" class="dropdown-item">Coupon Wallet</a>
+                        </div>
+                    </div>
+
+                    <!-- Developer Dropdown -->
+                    <div class="dropdown">
+                        <button class="dropdown-trigger text-medium-grey hover:text-primary-black transition-colors">
+                            Developer
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="index.html#" class="dropdown-item">API Documentation</a>
+                            <a href="index.html#" class="dropdown-item">API Use Case</a>
+                        </div>
+                    </div>
+
+                    <!-- Resources Dropdown -->
+                    <div class="dropdown">
+                        <button class="dropdown-trigger text-medium-grey hover:text-primary-black transition-colors">
+                            Resources
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="coupon-playbook.html" class="dropdown-item">Coupon Playbook</a>
+                            <a href="index.html#" class="dropdown-item">Support</a>
+                        </div>
+                    </div>
+
+                    <!-- Company Dropdown -->
+                    <div class="dropdown">
+                        <button class="dropdown-trigger text-medium-grey hover:text-primary-black transition-colors">
+                            Company
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="about.html" class="dropdown-item">About Us</a>
+                            <a href="contact.html" class="dropdown-item">Contact Us</a>
+                            <a href="news-press.html" class="dropdown-item">News & Press</a>
+                            <a href="investors.html" class="dropdown-item">Investors</a>
+                        </div>
+                    </div>
+
+                    <a href="#contact" class="btn-primary">Get Started</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-primary-black focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-4 pt-2 pb-4 space-y-1">
+                <!-- Products Mobile Dropdown -->
+                <div class="mobile-dropdown">
+                    <button class="mobile-dropdown-trigger" data-dropdown="products">
+                        <span>Products</span>
+                        <svg class="w-4 h-4 transform transition-transform chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="mobile-dropdown-menu" data-menu="products">
+                        <a href="coupon-management.html" class="block py-2 text-sm text-medium-grey hover:text-primary-orange">Coupon Management System</a>
+                        <a href="index.html#" class="block py-2 text-sm text-medium-grey hover:text-primary-orange">Coupon Marketplace</a>
+                        <a href="coupon-nfc.html" class="block py-2 text-sm text-medium-grey hover:text-primary-orange">Coupon NFC</a>
+                        <a href="#" class="block py-2 text-sm text-primary-orange font-semibold">Coupon Marketing</a>
+                        <a href="index.html#" class="block py-2 text-sm text-medium-grey hover:text-primary-orange">Coupon Wallet</a>
+                    </div>
+                </div>
+
+                <!-- Developer Mobile Dropdown -->
+                <div class="mobile-dropdown">
+                    <button class="mobile-dropdown-trigger" data-dropdown="developer">
+                        <span>Developer</span>
+                        <svg class="w-4 h-4 transform transition-transform chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="mobile-dropdown-menu" data-menu="developer">
+                        <a href="index.html#" class="block py-2 text-sm text-medium-grey hover:text-primary-orange">API Documentation</a>
+                        <a href="index.html#" class="block py-2 text-sm text-medium-grey hover:text-primary-orange">API Use Case</a>
+                    </div>
+                </div>
+
+                <!-- Resources Mobile Dropdown -->
+                <div class="mobile-dropdown">
+                    <button class="mobile-dropdown-trigger" data-dropdown="resources">
+                        <span>Resources</span>
+                        <svg class="w-4 h-4 transform transition-transform chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="mobile-dropdown-menu" data-menu="resources">
+                        <a href="coupon-playbook.html" class="block py-2 text-sm text-medium-grey hover:text-primary-orange">Coupon Playbook</a>
+                        <a href="index.html#" class="block py-2 text-sm text-medium-grey hover:text-primary-orange">Support</a>
+                    </div>
+                </div>
+
+                <!-- Company Mobile Dropdown -->
+                <div class="mobile-dropdown">
+                    <button class="mobile-dropdown-trigger" data-dropdown="company">
+                        <span>Company</span>
+                        <svg class="w-4 h-4 transform transition-transform chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="mobile-dropdown-menu" data-menu="company">
+                        <a href="about.html" class="block py-2 text-sm text-medium-grey hover:text-primary-orange">About Us</a>
+                        <a href="contact.html" class="block py-2 text-sm text-medium-grey hover:text-primary-orange">Contact Us</a>
+                        <a href="news-press.html" class="block py-2 text-sm text-medium-grey hover:text-primary-orange">News & Press</a>
+                        <a href="investors.html" class="block py-2 text-sm text-medium-grey hover:text-primary-orange">Investors</a>
+                    </div>
+                </div>
+
+                <a href="#contact" class="block py-2 text-primary-orange font-semibold">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-gradient-to-br from-primary-black via-gray-900 to-primary-black">
+        <div class="section-container">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <!-- Content -->
+                    <div>
+                        <p class="text-primary-orange text-lg font-semibold mb-4">COUPON MARKETING</p>
+                        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-6">
+                            Selling Vouchers has never been easier
+                        </h1>
+                        <p class="text-lg text-gray-100 mb-8 leading-relaxed">
+                            Mezzofy manages the backend operations for your digital voucher, cash coupon, and gift card sales from creation to redemption and payment handling. Save at least 30% of your time.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="#contact" class="btn-primary inline-block text-center">
+                                Contact Us Now
+                                <svg class="inline-block w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                                </svg>
+                            </a>
+                            <a href="#features" class="btn-secondary inline-block text-center bg-white/10 text-white border-white hover:bg-white/20">Learn More</a>
+                        </div>
+                    </div>
+
+                    <!-- Hero Image -->
+                    <div>
+                        <img src="https://placehold.co/600x400/1a1a1a/ff7a3d?text=Sales+Dashboard" alt="Coupon Sales Platform" class="rounded-xl shadow-2xl">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Features Section -->
+    <section id="features" class="bg-light-grey">
+        <div class="section-container">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-primary-black mb-4 text-center">
+                Everything You Need to Sell Coupons Online
+            </h2>
+            <p class="text-lg text-dark-grey text-center mb-12 max-w-3xl mx-auto">
+                Complete platform solution from creation to payment, designed for merchants who want to maximize their digital voucher sales
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Feature 1: Full Service -->
+                <div class="feature-card">
+                    <div class="w-12 h-12 bg-primary-orange rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-primary-black">Full Service</h3>
+                    <p class="text-dark-grey leading-relaxed mb-4">
+                        Mezzofy manages coupon creation with complete visibility and control. Focus on your business while we handle the technical complexities.
+                    </p>
+                    <ul class="space-y-2 text-dark-grey">
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-primary-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>End-to-end coupon management</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-primary-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Complete visibility and control</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Feature 2: Payment Connected -->
+                <div class="feature-card">
+                    <div class="w-12 h-12 bg-primary-orange rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-primary-black">Payment Connected</h3>
+                    <p class="text-dark-grey leading-relaxed mb-4">
+                        Seamlessly integrated payment processing with automatic payouts to your merchant account.
+                    </p>
+                    <ul class="space-y-2 text-dark-grey">
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-primary-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Multiple payment gateway integration</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-primary-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Automatic payouts to merchant accounts</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Feature 3: Multiple Channels -->
+                <div class="feature-card">
+                    <div class="w-12 h-12 bg-primary-orange rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-primary-black">Multiple Channels</h3>
+                    <p class="text-dark-grey leading-relaxed mb-4">
+                        Sell concurrently across your own channels and partner networks to maximize reach and revenue.
+                    </p>
+                    <ul class="space-y-2 text-dark-grey">
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-primary-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Proprietary channel support</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-primary-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Partner network distribution</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Feature 4: Coupon Online Sales -->
+                <div class="feature-card">
+                    <div class="w-12 h-12 bg-primary-orange rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-primary-black">Coupon Online Sales</h3>
+                    <p class="text-dark-grey leading-relaxed mb-4">
+                        Unlock the full potential of digital voucher sales with instant delivery and improved cash flow.
+                    </p>
+                    <ul class="space-y-2 text-dark-grey">
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-primary-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Instant delivery to customers</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-primary-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Advance cashflow for your business</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-5 h-5 text-primary-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>Boost customer loyalty</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Strengths Section -->
+    <section class="bg-white">
+        <div class="section-container">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-primary-black mb-4 text-center">
+                Secure. Seamless. Adaptable
+            </h2>
+            <p class="text-lg text-dark-grey text-center mb-12 max-w-3xl mx-auto">
+                Our platform offers fraud-proof functionality with flexible payment integration options, designed to scale with your business
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Strength 1: Authentic Coupons -->
+                <div class="feature-card">
+                    <div class="w-12 h-12 bg-primary-orange rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-primary-black">Authentic Coupons</h3>
+                    <p class="text-dark-grey leading-relaxed">
+                        Risk-free for customers with verified, authentic digital vouchers backed by secure validation technology.
+                    </p>
+                </div>
+
+                <!-- Strength 2: Fully Integrated -->
+                <div class="feature-card">
+                    <div class="w-12 h-12 bg-primary-orange rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-primary-black">Fully Integrated</h3>
+                    <p class="text-dark-grey leading-relaxed">
+                        Flexible payment gateway options that work with your existing infrastructure and preferred payment providers.
+                    </p>
+                </div>
+
+                <!-- Strength 3: Expand Reach -->
+                <div class="feature-card">
+                    <div class="w-12 h-12 bg-primary-orange rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-primary-black">Expand Reach</h3>
+                    <p class="text-dark-grey leading-relaxed">
+                        Access marketplace channels and corporate staff benefit programs to reach new customer segments.
+                    </p>
+                </div>
+
+                <!-- Strength 4: Sales Data Analytics -->
+                <div class="feature-card">
+                    <div class="w-12 h-12 bg-primary-orange rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-primary-black">Sales Data Analytics</h3>
+                    <p class="text-dark-grey leading-relaxed">
+                        Comprehensive insights for campaign optimization with real-time reporting and performance metrics.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="bg-light-grey">
+        <div class="section-container">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-primary-black mb-4 text-center">
+                We Manage. You Earn
+            </h2>
+            <p class="text-lg text-dark-grey text-center mb-12 max-w-3xl mx-auto">
+                Three simple steps to start selling your digital vouchers online
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Step 1: Setup & Create -->
+                <div class="feature-card text-center">
+                    <div class="w-16 h-16 bg-primary-orange rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-3xl font-bold text-white">1</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-primary-black">Setup & Create</h3>
+                    <p class="text-dark-grey leading-relaxed">
+                        Merchants complete simple forms to set up their account and create voucher offerings. Quick onboarding with minimal complexity.
+                    </p>
+                </div>
+
+                <!-- Step 2: Sell Online -->
+                <div class="feature-card text-center">
+                    <div class="w-16 h-16 bg-primary-orange rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-3xl font-bold text-white">2</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-primary-black">Sell Online</h3>
+                    <p class="text-dark-grey leading-relaxed">
+                        Multi-channel distribution begins with secure payment processing. Your vouchers go live across all selected channels simultaneously.
+                    </p>
+                </div>
+
+                <!-- Step 3: Get Paid & Review -->
+                <div class="feature-card text-center">
+                    <div class="w-16 h-16 bg-primary-orange rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-3xl font-bold text-white">3</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-primary-black">Get Paid & Review</h3>
+                    <p class="text-dark-grey leading-relaxed">
+                        Receive monthly payouts with full sales transparency. Review detailed analytics and optimize your offerings.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="bg-white">
+        <div class="section-container">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-primary-black mb-8">
+                    Simple Pricing
+                </h2>
+                <p class="text-lg text-dark-grey leading-relaxed mb-12">
+                    One transparent fee structure with everything you need to start selling
+                </p>
+
+                <div class="bg-light-grey rounded-xl p-8 md:p-12 shadow-lg max-w-2xl mx-auto">
+                    <div class="mb-8">
+                        <div class="flex items-baseline justify-center gap-3 mb-2">
+                            <span class="text-5xl font-bold text-primary-orange">$99</span>
+                            <span class="text-xl text-dark-grey">/month</span>
+                        </div>
+                        <p class="text-dark-grey">or $999/year (Save 17%)</p>
+                    </div>
+
+                    <div class="text-left mb-8">
+                        <h3 class="text-xl font-bold text-primary-black mb-6">One Fee Includes:</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <svg class="w-6 h-6 text-primary-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-dark-grey"><span class="font-semibold text-primary-black">Account setup</span> - Complete onboarding assistance</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-6 h-6 text-primary-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-dark-grey"><span class="font-semibold text-primary-black">Coupon catalogue setup</span> - Professional voucher configuration</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-6 h-6 text-primary-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-dark-grey"><span class="font-semibold text-primary-black">Vouchers setup</span> - Minimum $20 selling price</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-6 h-6 text-primary-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-dark-grey"><span class="font-semibold text-primary-black">Payment gateway integration</span> - Secure processing</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-6 h-6 text-primary-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-dark-grey"><span class="font-semibold text-primary-black">Online support</span> - Dedicated assistance</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-6 h-6 text-primary-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-dark-grey"><span class="font-semibold text-primary-black">Low transaction fees</span> - Competitive rates on sales</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="btn-primary w-full text-center block">Get Started Today</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-gradient-to-br from-primary-black via-gray-900 to-primary-black">
+        <div class="section-container text-center">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+                Ready to Start Selling Vouchers Online?
+            </h2>
+            <p class="text-lg sm:text-xl text-gray-100 mb-10 max-w-3xl mx-auto">
+                Join leading merchants who trust Mezzofy to power their digital voucher sales
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#contact" class="btn-primary w-full sm:w-auto text-center">Contact Us Now</a>
+                <a href="index.html#" class="btn-secondary w-full sm:w-auto text-center bg-white/10 text-white border-white hover:bg-white/20">View Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer & CTA -->
+    <footer id="contact" class="bg-primary-black text-white">
+        <div class="section-container">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
+                    Ready to power the future of commerce?
+                </h2>
+                <p class="text-lg sm:text-xl text-orange-200 mb-10 max-w-3xl mx-auto">
+                    Whether you are a merchant looking for maximum performance or a distributor seeking high-intent inventory, the Mezzofy Exchange Protocol is the indispensable infrastructure you need.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="index.html#contact" class="btn-primary w-full sm:w-auto text-center">Contact Sales (Enterprise)</a>
+                    <a href="index.html#" class="btn-secondary w-full sm:w-auto text-center bg-white/10 text-white border-white hover:bg-white/20">Developer Docs (API Access)</a>
+                </div>
+            </div>
+
+            <!-- Footer Links -->
+            <div class="border-t border-white/20 pt-12 mt-12">
+                <div class="grid md:grid-cols-4 gap-8 mb-8">
+                    <div>
+                        <h3 class="font-bold text-lg mb-4">Product</h3>
+                        <ul class="space-y-2 text-gray-200">
+                            <li><a href="index.html#" class="hover:text-white transition-colors">For Merchants</a></li>
+                            <li><a href="index.html#" class="hover:text-white transition-colors">For Distributors</a></li>
+                            <li><a href="index.html#" class="hover:text-white transition-colors">Bridge API</a></li>
+                            <li><a href="index.html#" class="hover:text-white transition-colors">Pricing</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg mb-4">Technology</h3>
+                        <ul class="space-y-2 text-gray-200">
+                            <li><a href="index.html#" class="hover:text-white transition-colors">Tokenization</a></li>
+                            <li><a href="index.html#" class="hover:text-white transition-colors">Security</a></li>
+                            <li><a href="index.html#" class="hover:text-white transition-colors">AI Integration</a></li>
+                            <li><a href="index.html#" class="hover:text-white transition-colors">Documentation</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg mb-4">Company</h3>
+                        <ul class="space-y-2 text-gray-200">
+                            <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+                            <li><a href="investors.html" class="hover:text-white transition-colors">Investors</a></li>
+                            <li><a href="index.html#" class="hover:text-white transition-colors">Careers</a></li>
+                            <li><a href="news-press.html" class="hover:text-white transition-colors">News & Press</a></li>
+                            <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg mb-4">Legal</h3>
+                        <ul class="space-y-2 text-gray-200">
+                            <li><a href="index.html#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                            <li><a href="index.html#" class="hover:text-white transition-colors">Terms of Service</a></li>
+                            <li><a href="index.html#" class="hover:text-white transition-colors">Cookie Policy</a></li>
+                            <li><a href="index.html#" class="hover:text-white transition-colors">Compliance</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="border-t border-white/20 pt-8 text-center text-gray-200">
+                    <p>&copy; 2024 Mezzofy. All rights reserved. Powering the future of digital commerce.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../src/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mezzofy - The Global Exchange for Digital Promotions. Secure, tokenized protocol connecting merchants to distributors.">
+    <title>Mezzofy - The Global Coupon Exchange Protocol</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="shortcut icon" href="favicon.png">
+
+    <link rel="stylesheet" href="output.css">
+</head>
+<body class="bg-white text-dark-grey">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-md z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center gap-2">
+                        <img src="assets/images/logo.png" alt="Mezzofy Logo" class="h-8 md:h-10">
+                        <span class="md:hidden text-xl font-bold text-primary-black">MEZZOFY</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <!-- Products Dropdown -->
+                    <div class="dropdown">
+                        <button class="dropdown-trigger text-medium-grey hover:text-primary-black transition-colors">
+                            Products
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="coupon-management.html" class="dropdown-item">Coupon Management System</a>
+                            <a href="coupon-marketplace.html" class="dropdown-item">Coupon Marketplace</a>
+                            <a href="coupon-nfc.html" class="dropdown-item">Coupon NFC</a>
+                            <a href="coupon-marketing.html" class="dropdown-item">Coupon Marketing</a>
+                            <a href="coupon-wallet.html" class="dropdown-item">Coupon Wallet</a>
+                        </div>
+                    </div>
+
+                    <!-- Developer Dropdown -->
+                    <div class="dropdown">
+                        <button class="dropdown-trigger text-medium-grey hover:text-primary-black transition-colors">
+                            Developer
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item">API Documentation</a>
+                            <a href="#" class="dropdown-item">API Use Case</a>
+                        </div>
+                    </div>
+
+                    <!-- Resources Dropdown -->
+                    <div class="dropdown">
+                        <button class="dropdown-trigger text-medium-grey hover:text-primary-black transition-colors">
+                            Resources
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="coupon-playbook.html" class="dropdown-item">Coupon Playbook</a>
+                            <a href="#" class="dropdown-item">Support</a>
+                        </div>
+                    </div>
+
+                    <!-- Company Dropdown -->
+                    <div class="dropdown">
+                        <button class="dropdown-trigger text-medium-grey hover:text-primary-black transition-colors">
+                            Company
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="about.html" class="dropdown-item">About Us</a>
+                            <a href="contact.html" class="dropdown-item">Contact Us</a>
+                            <a href="news-press.html" class="dropdown-item">News & Press</a>
+                            <a href="investors.html" class="dropdown-item">Investors</a>
+                        </div>
+                    </div>
+
+                    <a href="#contact" class="btn-primary">Get Started</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-primary-black focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-4 pt-2 pb-4 space-y-1">
+                <!-- Products Mobile Dropdown -->
+                <div class="mobile-dropdown">
+                    <button class="mobile-dropdown-trigger" data-dropdown="products">
+                        <span>Products</span>
+                        <svg class="w-4 h-4 transform transition-transform chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="mobile-dropdown-menu" data-menu="products">
+                        <a href="coupon-management.html" class="block py-2 text-sm text-medium-grey hover:text-primary-orange">Coupon Management System</a>
+                        <a href="#" class="block py-2 text-sm text-medium-grey hover:text-primary-orange">Coupon Marketplace</a>
+                        <a href="coupon-nfc.html" class="block py-2 text-sm text-medium-grey hover:text-primary-orange">Coupon NFC</a>
+                        <a href="#" class="block py-2 text-sm text-medium-grey hover:text-primary-orange">Coupon Marketing</a>
+                        <a href="#" class="block py-2 text-sm text-medium-grey hover:text-primary-orange">Coupon Wallet</a>
+                    </div>
+                </div>
+
+                <!-- Developer Mobile Dropdown -->
+                <div class="mobile-dropdown">
+                    <button class="mobile-dropdown-trigger" data-dropdown="developer">
+                        <span>Developer</span>
+                        <svg class="w-4 h-4 transform transition-transform chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="mobile-dropdown-menu" data-menu="developer">
+                        <a href="#" class="block py-2 text-sm text-medium-grey hover:text-primary-orange">API Documentation</a>
+                        <a href="#" class="block py-2 text-sm text-medium-grey hover:text-primary-orange">API Use Case</a>
+                    </div>
+                </div>
+
+                <!-- Resources Mobile Dropdown -->
+                <div class="mobile-dropdown">
+                    <button class="mobile-dropdown-trigger" data-dropdown="resources">
+                        <span>Resources</span>
+                        <svg class="w-4 h-4 transform transition-transform chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="mobile-dropdown-menu" data-menu="resources">
+                        <a href="coupon-playbook.html" class="block py-2 text-sm text-medium-grey hover:text-primary-orange">Coupon Playbook</a>
+                        <a href="#" class="block py-2 text-sm text-medium-grey hover:text-primary-orange">Support</a>
+                    </div>
+                </div>
+
+                <!-- Company Mobile Dropdown -->
+                <div class="mobile-dropdown">
+                    <button class="mobile-dropdown-trigger" data-dropdown="company">
+                        <span>Company</span>
+                        <svg class="w-4 h-4 transform transition-transform chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="mobile-dropdown-menu" data-menu="company">
+                        <a href="about.html" class="block py-2 text-sm text-medium-grey hover:text-primary-orange">About Us</a>
+                        <a href="contact.html" class="block py-2 text-sm text-medium-grey hover:text-primary-orange">Contact Us</a>
+                        <a href="news-press.html" class="block py-2 text-sm text-medium-grey hover:text-primary-orange">News & Press</a>
+                        <a href="investors.html" class="block py-2 text-sm text-medium-grey hover:text-primary-orange">Investors</a>
+                    </div>
+                </div>
+
+                <a href="#contact" class="block py-2 text-primary-orange font-semibold">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-gradient-to-br from-primary-black via-gray-900 to-primary-black">
+        <div class="section-container">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">
+                    THE GLOBAL EXCHANGE FOR DIGITAL PROMOTIONS
+                </h1>
+                <p class="text-lg sm:text-xl md:text-2xl text-orange-200 mb-4 font-light">
+                    Moving from Selling Software to Powering the World's Digital Commerce Infrastructure
+                </p>
+                <p class="text-base sm:text-lg text-gray-100 mb-10 max-w-3xl mx-auto">
+                    Mezzofy is the secure, tokenized protocol that connects coupon <strong>Supply</strong> (Merchants) directly to <strong>Demand</strong> (Distributors), ensuring fraudless validation and maximized redemption across the globe.
+                </p>
+
+                <!-- Dual CTAs -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="#merchants" class="btn-primary w-full sm:w-auto text-center">
+                        List Your Inventory: Start Selling
+                        <svg class="inline-block w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
+                    </a>
+                    <a href="#distributors" class="btn-secondary w-full sm:w-auto text-center bg-white/10 text-white border-white hover:bg-white/20">
+                        Access Deals: Find Partners
+                        <svg class="inline-block w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Protocol Shift Section -->
+    <section id="protocol" class="bg-light-grey">
+        <div class="section-container">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-primary-black mb-6">
+                    The Future of Promotions is Secure, Standardized, and Tokenized
+                </h2>
+                <p class="text-lg sm:text-xl text-dark-grey max-w-4xl mx-auto">
+                    Traditional digital promotions are failing due to fragmentation, high costs, and security risks. We eliminate the obsolete SaaS model and replace it with a high-liquidity, high-performance Exchange Protocol.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Point 1: Network Effects -->
+                <div class="feature-card">
+                    <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-primary-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary-black mb-4">From Tool to Network</h3>
+                    <p class="text-dark-grey">
+                        We focus on network effects and secure settlement, not just features. Build real value through connections.
+                    </p>
+                </div>
+
+                <!-- Point 2: AI-Native -->
+                <div class="feature-card">
+                    <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-primary-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary-black mb-4">AI-Native Infrastructure</h3>
+                    <p class="text-dark-grey">
+                        Our data is machine-readable, making us the standard interface for the next generation of autonomous AI shopping agents.
+                    </p>
+                </div>
+
+                <!-- Point 3: Security -->
+                <div class="feature-card">
+                    <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-primary-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary-black mb-4">Unrivaled Security</h3>
+                    <p class="text-dark-grey">
+                        Every promotion is standardized into the Mezzofy Coupon Standard, a proprietary protocol that guarantees unique, fraud-proof digital assets.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- For Merchants Section -->
+    <section id="merchants" class="bg-white">
+        <div class="section-container">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-primary-black mb-6">
+                    For Merchants: Turn Coupon Liabilities into High-Performing Digital Assets
+                </h2>
+                <p class="text-lg sm:text-xl text-dark-grey max-w-4xl mx-auto">
+                    Join the Exchange for free and gain instant access to global distribution channels. You only pay when a sale is successfully made and redeemed.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Benefit 1 -->
+                <div class="border-l-4 border-primary-orange pl-6 py-4">
+                    <h3 class="text-xl font-bold text-primary-black mb-3">Zero Upfront Cost</h3>
+                    <p class="text-dark-grey">
+                        Free Onboarding. Pay only a small transaction fee upon final, successful redemption (Performance-Based Model).
+                    </p>
+                </div>
+
+                <!-- Benefit 2 -->
+                <div class="border-l-4 border-primary-orange pl-6 py-4">
+                    <h3 class="text-xl font-bold text-primary-black mb-3">Flexible Control</h3>
+                    <p class="text-dark-grey">
+                        Use our Bridge API with your existing CMS, or utilize our free Mezzofy CMS products. You dictate the rules, we handle the security.
+                    </p>
+                </div>
+
+                <!-- Benefit 3 -->
+                <div class="border-l-4 border-primary-orange pl-6 py-4">
+                    <h3 class="text-xl font-bold text-primary-black mb-3">Global Footprint</h3>
+                    <p class="text-dark-grey">
+                        Instantly expose your inventory to our B2B marketplace, channel partners, and the high-volume NFC Network for physical retail engagement.
+                    </p>
+                </div>
+
+                <!-- Benefit 4 -->
+                <div class="border-l-4 border-primary-orange pl-6 py-4">
+                    <h3 class="text-xl font-bold text-primary-black mb-3">Future-Proof Asset</h3>
+                    <p class="text-dark-grey">
+                        Your promotions are tokenized, opening up possibilities for secondary markets and new financial instruments (RWA Linkage).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- For Distributors Section -->
+    <section id="distributors" class="bg-light-grey">
+        <div class="section-container">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-primary-black mb-6">
+                    For Distributors & Partners: Access the World's Most Secure, High-Intent Coupon Inventory
+                </h2>
+                <p class="text-lg sm:text-xl text-dark-grey max-w-4xl mx-auto">
+                    Enhance your loyalty program, banking app, or corporate HR portal with real-time, verified deals without the financial risk of inventory purchasing.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Benefit 1 -->
+                <div class="border-l-4 border-primary-orange pl-6 py-4 bg-white rounded-r-lg">
+                    <h3 class="text-xl font-bold text-primary-black mb-3">Risk-Free Integration</h3>
+                    <p class="text-dark-grey">
+                        Free to Access and seamless integration via the Bridge API. Instantly pull standardized deals into your platform.
+                    </p>
+                </div>
+
+                <!-- Benefit 2 -->
+                <div class="border-l-4 border-primary-orange pl-6 py-4 bg-white rounded-r-lg">
+                    <h3 class="text-xl font-bold text-primary-black mb-3">Cash Flow Protection</h3>
+                    <p class="text-dark-grey">
+                        Our Consignment Settlement Model requires only a partial upfront deposit for Large Enterprises, with the bulk of the charge processed only on verified redemption.
+                    </p>
+                </div>
+
+                <!-- Benefit 3 -->
+                <div class="border-l-4 border-primary-orange pl-6 py-4 bg-white rounded-r-lg">
+                    <h3 class="text-xl font-bold text-primary-black mb-3">Standardized Quality</h3>
+                    <p class="text-dark-grey">
+                        All coupons adhere to the Mezzofy Coupon Standard, eliminating fraud risk and ensuring a perfect redemption experience for your customers.
+                    </p>
+                </div>
+
+                <!-- Benefit 4 -->
+                <div class="border-l-4 border-primary-orange pl-6 py-4 bg-white rounded-r-lg">
+                    <h3 class="text-xl font-bold text-primary-black mb-3">Targeted Distribution</h3>
+                    <p class="text-dark-grey">
+                        Consume inventory tailored for your channels: Loyalty & HR for internal benefits, and the AI Agent API for programmatic consumption.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tokenization Core Section -->
+    <section id="tokenization" class="bg-gradient-to-br from-primary-black to-gray-900 text-white">
+        <div class="section-container">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
+                    The Exchange Core: Where Commerce Meets Security
+                </h2>
+                <p class="text-lg sm:text-xl text-orange-200 max-w-4xl mx-auto">
+                    Our Layer 2 Core transforms simple promotional codes into unique, trackable digital assets.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Component 1 -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20">
+                    <div class="w-12 h-12 bg-primary-orange/30 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Standardization & Tokenization</h3>
+                    <p class="text-gray-100">
+                        Every voucher is tokenized upon ingestion, converting it into a secure, single-use digital asset (NFT/fungible instrument).
+                    </p>
+                </div>
+
+                <!-- Component 2 -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20">
+                    <div class="w-12 h-12 bg-primary-orange/30 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Asset Linkage</h3>
+                    <p class="text-gray-100">
+                        We create the foundation for linking these assets to Real-World Assets (RWA), expanding the digital coupon market into the rapidly growing Web3/DeFi asset space.
+                    </p>
+                </div>
+
+                <!-- Component 3 -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20">
+                    <div class="w-12 h-12 bg-primary-orange/30 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Clearinghouse</h3>
+                    <p class="text-gray-100">
+                        The core manages all consignment, financial reconciliation, and fraudless validation.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer & CTA -->
+    <footer id="contact" class="bg-primary-black text-white">
+        <div class="section-container">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
+                    Ready to power the future of commerce?
+                </h2>
+                <p class="text-lg sm:text-xl text-orange-200 mb-10 max-w-3xl mx-auto">
+                    Whether you are a merchant looking for maximum performance or a distributor seeking high-intent inventory, the Mezzofy Exchange Protocol is the indispensable infrastructure you need.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="#" class="btn-primary w-full sm:w-auto text-center">Contact Sales (Enterprise)</a>
+                    <a href="#" class="btn-secondary w-full sm:w-auto text-center bg-white/10 text-white border-white hover:bg-white/20">Developer Docs (API Access)</a>
+                </div>
+            </div>
+
+            <!-- Footer Links -->
+            <div class="border-t border-white/20 pt-12 mt-12">
+                <div class="grid md:grid-cols-4 gap-8 mb-8">
+                    <div>
+                        <h3 class="font-bold text-lg mb-4">Product</h3>
+                        <ul class="space-y-2 text-gray-200">
+                            <li><a href="#" class="hover:text-white transition-colors">For Merchants</a></li>
+                            <li><a href="#" class="hover:text-white transition-colors">For Distributors</a></li>
+                            <li><a href="#" class="hover:text-white transition-colors">Bridge API</a></li>
+                            <li><a href="#" class="hover:text-white transition-colors">Pricing</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg mb-4">Technology</h3>
+                        <ul class="space-y-2 text-gray-200">
+                            <li><a href="#" class="hover:text-white transition-colors">Tokenization</a></li>
+                            <li><a href="#" class="hover:text-white transition-colors">Security</a></li>
+                            <li><a href="#" class="hover:text-white transition-colors">AI Integration</a></li>
+                            <li><a href="#" class="hover:text-white transition-colors">Documentation</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg mb-4">Company</h3>
+                        <ul class="space-y-2 text-gray-200">
+                            <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+                            <li><a href="investors.html" class="hover:text-white transition-colors">Investors</a></li>
+                            <li><a href="#" class="hover:text-white transition-colors">Careers</a></li>
+                            <li><a href="news-press.html" class="hover:text-white transition-colors">News & Press</a></li>
+                            <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg mb-4">Legal</h3>
+                        <ul class="space-y-2 text-gray-200">
+                            <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                            <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
+                            <li><a href="#" class="hover:text-white transition-colors">Cookie Policy</a></li>
+                            <li><a href="#" class="hover:text-white transition-colors">Compliance</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="border-t border-white/20 pt-8 text-center text-gray-200">
+                    <p>&copy; 2024 Mezzofy. All rights reserved. Powering the future of digital commerce.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../src/js/main.js"></script>
+</body>
+</html>
