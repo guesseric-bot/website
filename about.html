@@ -5,13 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="About Mezzofy - Connecting Businesses and Customers Through The Power of Smart Couponing. Learn about our mission, values, and recognition.">
     <title>About Us - Mezzofy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-orange': '#FF6B35',
+                        'primary-black': '#1A1A1A',
+                        'light-grey': '#F5F5F5',
+                        'medium-grey': '#757575',
+                        'dark-grey': '#424242'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+        }
+        .feature-card {
+            background: white;
+            border-radius: 0.5rem;
+            padding: 2rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary {
+            background-color: #FF6B35;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            display: inline-block;
+            transition: background-color 0.2s;
+        }
+        .btn-primary:hover {
+            background-color: #e55a2b;
+        }
+        .btn-secondary {
+            background-color: white;
+            color: #FF6B35;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            display: inline-block;
+            border: 2px solid #FF6B35;
+            transition: all 0.2s;
+        }
+        .btn-secondary:hover {
+            background-color: #FF6B35;
+            color: white;
+        }
+    </style>
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="shortcut icon" href="favicon.png">
-
     <link rel="stylesheet" href="output.css">
 </head>
 <body class="bg-white text-dark-grey">
@@ -30,6 +89,21 @@
 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center space-x-6">
+                    <!-- Solutions Dropdown -->
+                    <div class="dropdown">
+                        <button class="dropdown-trigger text-medium-grey hover:text-primary-black transition-colors">
+                            Solutions
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="for-merchants.html" class="dropdown-item">I'm a Merchant</a>
+                            <a href="for-distributors.html" class="dropdown-item">I'm a Distributor</a>
+                            <a href="for-developers.html" class="dropdown-item">I'm a Developer</a>
+                        </div>
+                    </div>
+
                     <!-- Products Dropdown -->
                     <div class="dropdown">
                         <button class="dropdown-trigger text-medium-grey hover:text-primary-black transition-colors">
@@ -84,7 +158,7 @@
                             </svg>
                         </button>
                         <div class="dropdown-menu">
-                            <a href="#" class="dropdown-item text-primary-orange font-semibold">About Us</a>
+                            <a href="about.html" class="dropdown-item text-primary-orange font-semibold">About Us</a>
                             <a href="contact.html" class="dropdown-item">Contact Us</a>
                             <a href="news-press.html" class="dropdown-item">News & Press</a>
                             <a href="investors.html" class="dropdown-item">Investors</a>
@@ -108,6 +182,21 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
             <div class="px-4 pt-2 pb-4 space-y-1">
+                <!-- Solutions Mobile Dropdown -->
+                <div class="mobile-dropdown">
+                    <button class="mobile-dropdown-trigger" data-dropdown="solutions">
+                        <span>Solutions</span>
+                        <svg class="w-4 h-4 transform transition-transform chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="mobile-dropdown-menu" data-menu="solutions">
+                        <a href="for-merchants.html" class="block py-2 text-sm text-medium-grey hover:text-primary-orange">I'm a Merchant</a>
+                        <a href="for-distributors.html" class="block py-2 text-sm text-medium-grey hover:text-primary-orange">I'm a Distributor</a>
+                        <a href="for-developers.html" class="block py-2 text-sm text-medium-grey hover:text-primary-orange">I'm a Developer</a>
+                    </div>
+                </div>
+
                 <!-- Products Mobile Dropdown -->
                 <div class="mobile-dropdown">
                     <button class="mobile-dropdown-trigger" data-dropdown="products">
@@ -117,7 +206,7 @@
                         </svg>
                     </button>
                     <div class="mobile-dropdown-menu" data-menu="products">
-                        <a href="coupon-management.html" class="block py-2 text-sm text-medium-grey hover:text-primary-orange">Coupon Management System</a>
+                        <a href="coupon-management.html" class="block py-2 text-sm text-primary-orange font-semibold">Coupon Management System</a>
                         <a href="coupon-marketplace.html" class="block py-2 text-sm text-medium-grey hover:text-primary-orange">Coupon Marketplace</a>
                         <a href="coupon-nfc.html" class="block py-2 text-sm text-medium-grey hover:text-primary-orange">Coupon NFC</a>
                         <a href="coupon-marketing.html" class="block py-2 text-sm text-medium-grey hover:text-primary-orange">Coupon Marketing</a>
@@ -162,7 +251,7 @@
                         </svg>
                     </button>
                     <div class="mobile-dropdown-menu" data-menu="company">
-                        <a href="#" class="block py-2 text-sm text-primary-orange font-semibold">About Us</a>
+                        <a href="about.html" class="block py-2 text-sm text-primary-orange font-semibold">About Us</a>
                         <a href="contact.html" class="block py-2 text-sm text-medium-grey hover:text-primary-orange">Contact Us</a>
                         <a href="news-press.html" class="block py-2 text-sm text-medium-grey hover:text-primary-orange">News & Press</a>
                         <a href="investors.html" class="block py-2 text-sm text-medium-grey hover:text-primary-orange">Investors</a>
@@ -482,48 +571,61 @@
 
             <!-- Footer Links -->
             <div class="border-t border-white/20 pt-12 mt-12">
-                <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+                    <!-- Company Info -->
+                    <div class="lg:col-span-1">
+                        <h3 class="text-2xl font-bold text-primary-orange mb-4">Mezzofy</h3>
+                        <p class="text-sm mb-4 text-gray-200">Building the future of coupon infrastructure through the Mezzofy Exchange Protocol.</p>
+                    </div>
+
+                    <!-- Solutions -->
                     <div>
-                        <h3 class="font-bold text-lg mb-4">Product</h3>
+                        <h3 class="font-bold text-lg mb-4 text-white">Solutions</h3>
                         <ul class="space-y-2 text-gray-200">
-                            <li><a href="index.html#" class="hover:text-white transition-colors">For Merchants</a></li>
-                            <li><a href="index.html#" class="hover:text-white transition-colors">For Distributors</a></li>
-                            <li><a href="index.html#" class="hover:text-white transition-colors">Bridge API</a></li>
-                            <li><a href="index.html#" class="hover:text-white transition-colors">Pricing</a></li>
+                            <li><a href="for-merchants.html" class="hover:text-white transition-colors">For Merchants</a></li>
+                            <li><a href="for-distributors.html" class="hover:text-white transition-colors">For Distributors</a></li>
+                            <li><a href="for-developers.html" class="hover:text-white transition-colors">For Developers</a></li>
+                            <li><a href="index.html#product-ecosystem" class="hover:text-white transition-colors">Product Ecosystem</a></li>
                         </ul>
                     </div>
+
+                    <!-- Products -->
                     <div>
-                        <h3 class="font-bold text-lg mb-4">Technology</h3>
+                        <h3 class="font-bold text-lg mb-4 text-white">Products</h3>
                         <ul class="space-y-2 text-gray-200">
-                            <li><a href="index.html#" class="hover:text-white transition-colors">Tokenization</a></li>
-                            <li><a href="index.html#" class="hover:text-white transition-colors">Security</a></li>
-                            <li><a href="index.html#" class="hover:text-white transition-colors">AI Integration</a></li>
-                            <li><a href="index.html#" class="hover:text-white transition-colors">Documentation</a></li>
+                            <li><a href="coupon-management.html" class="hover:text-white transition-colors">Management</a></li>
+                            <li><a href="coupon-marketplace.html" class="hover:text-white transition-colors">Marketplace</a></li>
+                            <li><a href="coupon-nfc.html" class="hover:text-white transition-colors">NFC</a></li>
+                            <li><a href="coupon-marketing.html" class="hover:text-white transition-colors">Marketing</a></li>
+                            <li><a href="coupon-wallet.html" class="hover:text-white transition-colors">Wallet</a></li>
                         </ul>
                     </div>
+
+                    <!-- Resources -->
                     <div>
-                        <h3 class="font-bold text-lg mb-4">Company</h3>
+                        <h3 class="font-bold text-lg mb-4 text-white">Resources</h3>
                         <ul class="space-y-2 text-gray-200">
-                            <li><a href="about.html" class="hover:text-white transition-colors text-primary-orange font-semibold">About Us</a></li>
-                            <li><a href="investors.html" class="hover:text-white transition-colors">Investors</a></li>
-                            <li><a href="index.html#" class="hover:text-white transition-colors">Careers</a></li>
+                            <li><a href="coupon-playbook.html" class="hover:text-white transition-colors">Coupon Playbook</a></li>
+                            <li><a href="#" class="hover:text-white transition-colors">API Documentation</a></li>
+                            <li><a href="#" class="hover:text-white transition-colors">API Use Case</a></li>
+                            <li><a href="#" class="hover:text-white transition-colors">Support</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Company -->
+                    <div>
+                        <h3 class="font-bold text-lg mb-4 text-white">Company</h3>
+                        <ul class="space-y-2 text-gray-200">
+                            <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+                            <li><a href="contact.html" class="hover:text-white transition-colors">Contact Us</a></li>
                             <li><a href="news-press.html" class="hover:text-white transition-colors">News & Press</a></li>
-                            <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-lg mb-4">Legal</h3>
-                        <ul class="space-y-2 text-gray-200">
-                            <li><a href="index.html#" class="hover:text-white transition-colors">Privacy Policy</a></li>
-                            <li><a href="index.html#" class="hover:text-white transition-colors">Terms of Service</a></li>
-                            <li><a href="index.html#" class="hover:text-white transition-colors">Cookie Policy</a></li>
-                            <li><a href="index.html#" class="hover:text-white transition-colors">Compliance</a></li>
+                            <li><a href="investors.html" class="hover:text-white transition-colors">Investors</a></li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="border-t border-white/20 pt-8 text-center text-gray-200">
-                    <p>&copy; 2024 Mezzofy. All rights reserved. Powering the future of digital commerce.</p>
+                    <p>&copy; 2024 Mezzofy. All rights reserved.</p>
                 </div>
             </div>
         </div>
