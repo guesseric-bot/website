@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Use Mezzofy NFC Coupons - Customer Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #ff7a3d 0%, #ff5722 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ff7a3d 0%, #ff5722 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.95;
+        }
+
+        .content {
+            padding: 60px 40px;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .intro h2 {
+            font-size: 2em;
+            color: #ff7a3d;
+            margin-bottom: 20px;
+        }
+
+        .intro p {
+            font-size: 1.1em;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .step-section {
+            margin-bottom: 50px;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 122, 61, 0.3);
+        }
+
+        .step-number {
+            flex-shrink: 0;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #ff7a3d 0%, #ff5722 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-right: 25px;
+        }
+
+        .step-content h3 {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .step-content p {
+            color: #666;
+            font-size: 1.05em;
+            line-height: 1.7;
+        }
+
+        .step-content ul {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+
+        .step-content li {
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #ff7a3d15 0%, #ff572215 100%);
+            border-left: 4px solid #ff7a3d;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+
+        .highlight-box h3 {
+            color: #ff7a3d;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .highlight-box ul {
+            padding-left: 20px;
+        }
+
+        .highlight-box li {
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .tips-section {
+            background: #fff8e1;
+            border-left: 4px solid #ffa726;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+
+        .tips-section h3 {
+            color: #f57c00;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .faq-section {
+            margin-top: 60px;
+        }
+
+        .faq-section h2 {
+            font-size: 2em;
+            color: #ff7a3d;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .faq-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .faq-item h4 {
+            color: #333;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .faq-item p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .support-section {
+            background: linear-gradient(135deg, #ff7a3d 0%, #ff5722 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .support-section h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .support-section p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        .support-section a {
+            color: white;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 40px 20px;
+            }
+
+            header h1 {
+                font-size: 2em;
+            }
+
+            .content {
+                padding: 40px 20px;
+            }
+
+            .step {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .step-number {
+                margin-bottom: 15px;
+            }
+
+            .intro h2, .faq-section h2 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎫 How to Use Mezzofy NFC Coupons</h1>
+            <p>Your complete guide to tapping, claiming, and redeeming digital coupons</p>
+        </header>
+
+        <div class="content">
+            <div class="intro">
+                <h2>Welcome to the Future of Coupons!</h2>
+                <p>Mezzofy's NFC technology makes saving money easier than ever. Simply tap your phone on any Mezzofy NFC sticker or scan a QR code to unlock exclusive deals. Follow this simple guide to start saving today!</p>
+            </div>
+
+            <div class="step-section">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Enable NFC on Your Phone</h3>
+                        <p>Before you can tap and save, make sure NFC is enabled on your smartphone:</p>
+                        <ul>
+                            <li><strong>iPhone:</strong> NFC is always on for iPhone 7 and newer. No setup needed!</li>
+                            <li><strong>Android:</strong> Go to Settings → Connected Devices → Connection Preferences → NFC → Turn ON</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Find a Mezzofy NFC Coupon</h3>
+                        <p>Look for Mezzofy NFC stickers at participating merchants, on product displays, in-store promotions, or marketing materials. You can also scan QR codes if NFC isn't available.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Tap Your Phone</h3>
+                        <p>Hold the back of your smartphone close to the NFC sticker (within 1-2 inches). You'll feel a vibration or hear a sound confirming the tap. Your phone will automatically open the coupon link in your browser.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>View Coupon Details</h3>
+                        <p>Once the page loads, you'll see:</p>
+                        <ul>
+                            <li>The discount or offer details</li>
+                            <li>Expiration date and terms</li>
+                            <li>Participating merchant information</li>
+                            <li>A unique coupon code</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Claim Your Coupon (Two Ways)</h3>
+                        
+                        <p style="margin-bottom: 20px;"><strong>Option A: With Mezzofy Coupon Clipper App (Recommended)</strong></p>
+                        <p>For the best experience, download the <strong>Mezzofy Coupon Clipper</strong> app:</p>
+                        <ul>
+                            <li><strong>Seamless Collection:</strong> Tap any NFC coupon and it automatically saves to your app</li>
+                            <li><strong>No Personal Data Required:</strong> Start using immediately without sign-up</li>
+                            <li><strong>All Coupons in One Place:</strong> Easy access to your entire coupon collection</li>
+                            <li><strong>Instant Redemption:</strong> Show coupons directly from the app at checkout</li>
+                        </ul>
+                        
+                        <p style="margin-top: 25px; margin-bottom: 20px;"><strong>Option B: Without the App (Browser-Based)</strong></p>
+                        <p>Don't have the app yet? No problem! When you tap an NFC coupon:</p>
+                        <ul>
+                            <li>The coupon details page launches immediately in your browser</li>
+                            <li>View and use the coupon right away at checkout</li>
+                            <li><strong>Save Options:</strong> Optionally save to Apple Wallet, Google Wallet, or Samsung Wallet</li>
+                            <li><strong>Or Download the App:</strong> A convenient link to download Mezzofy Coupon Clipper for future use</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">6</div>
+                    <div class="step-content">
+                        <h3>Redeem at Checkout</h3>
+                        <p>When you're ready to use your coupon:</p>
+                        <ul>
+                            <li>Open your Mezzofy Coupon Clipper app or access the coupon from your device wallet</li>
+                            <li>Select the coupon you want to use</li>
+                            <li>Show the QR code or barcode to the merchant's scanner at checkout</li>
+                            <li>Watch your discount apply instantly!</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h3>✨ Key Features of Mezzofy NFC Coupons</h3>
+                <ul>
+                    <li><strong>Instant Access:</strong> No need to download apps before tapping – works directly in your browser</li>
+                    <li><strong>Privacy-Friendly:</strong> The Coupon Clipper app requires no personal data to use</li>
+                    <li><strong>Multiple Wallet Options:</strong> Save to Mezzofy, Apple Wallet, Google Wallet, or Samsung Wallet</li>
+                    <li><strong>No Printing Required:</strong> Completely paperless and eco-friendly</li>
+                    <li><strong>Real-Time Updates:</strong> Get notifications about new deals and expiring coupons</li>
+                    <li><strong>Multi-Portal Support:</strong> Works with B2C, C2C, and partner merchant systems</li>
+                </ul>
+            </div>
+
+            <div class="tips-section">
+                <h3>💡 Pro Tips for Maximum Savings</h3>
+                <ul>
+                    <li><strong>Download the App:</strong> Get the Mezzofy Coupon Clipper for the fastest, most seamless experience</li>
+                    <li><strong>Enable Notifications:</strong> Never miss a deal – allow Mezzofy to send you alerts about new coupons and expiring offers</li>
+                    <li><strong>Check Expiration Dates:</strong> Use your coupons before they expire to maximize your savings</li>
+                    <li><strong>Stack Offers:</strong> Some merchants allow you to combine multiple coupons – check the terms!</li>
+                    <li><strong>Share with Friends:</strong> Use our C2C portal to trade or gift coupons you won't use</li>
+                    <li><strong>Follow Favorite Merchants:</strong> Get exclusive early access to their promotions</li>
+                </ul>
+            </div>
+
+            <div class="faq-section">
+                <h2>Frequently Asked Questions</h2>
+
+                <div class="faq-item">
+                    <h4>Q: Do I need to download an app to use NFC coupons?</h4>
+                    <p>A: No! You can tap and view coupons directly in your mobile browser. However, downloading the Mezzofy Coupon Clipper app provides the best experience with automatic coupon collection and no personal data required.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>Q: What if my phone doesn't have NFC?</h4>
+                    <p>A: No problem! Every NFC coupon also has a QR code option. Simply open your camera app and scan the QR code to access the same coupon.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>Q: Does the Mezzofy Coupon Clipper app require personal information?</h4>
+                    <p>A: No! You can start using the app immediately without providing any personal data. It's designed for privacy and convenience.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>Q: Can I use a coupon multiple times?</h4>
+                    <p>A: It depends on the coupon terms. Most coupons are single-use, but some promotional offers allow multiple redemptions. Check the coupon details for specific information.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>Q: What happens if I tap a coupon but don't save it?</h4>
+                    <p>A: Without the app, you can still use the coupon immediately from the browser page. You can also save it to your device wallet (Apple, Google, or Samsung) or tap the same NFC sticker again later.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>Q: Can I transfer my coupons to someone else?</h4>
+                    <p>A: Yes! Through our C2C (Customer-to-Customer) portal, you can trade, gift, or sell unused coupons to other Mezzofy users.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>Q: What if the coupon doesn't work at checkout?</h4>
+                    <p>A: First, check that the coupon hasn't expired and that you're using it at a participating merchant. If issues persist, contact the merchant or Mezzofy customer support for assistance.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>Q: Which wallet should I use to save coupons?</h4>
+                    <p>A: We recommend the Mezzofy Coupon Clipper app for the best experience. However, you can also save to Apple Wallet (iPhone), Google Wallet (Android), or Samsung Wallet depending on your device.</p>
+                </div>
+            </div>
+
+            <div class="support-section">
+                <h3>Need More Help?</h3>
+                <p>Our customer support team is here to assist you!</p>
+                <p>Contact us at: <a href="mailto:support@mezzofy.com">support@mezzofy.com</a></p>
+                <p>Visit our Help Center for more guides and tutorials</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
