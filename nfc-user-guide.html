@@ -12,10 +12,10 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Microsoft JhengHei', sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #ff7a3d 0%, #ff5722 100%);
+            background: linear-gradient(135deg, #ff7a3d 0%, #ff 100%);
             min-height: 100vh;
             padding: 20px;
         }
@@ -216,6 +216,48 @@
             font-weight: 600;
         }
 
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+	    width: 250px;
+            z-index: 1000;
+            background: white;
+            border-radius: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            display: flex;
+        }
+
+        .language-switcher button {
+            background: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 0.95em;
+            transition: all 0.3s ease;
+            color: #333;
+            font-weight: 500;
+            flex: 1;
+        }
+
+        .language-switcher button:hover {
+            background: #f5f5f5;
+        }
+
+        .language-switcher button.active {
+            background: linear-gradient(135deg, #ff7a3d 0%, #ff5722 100%);
+            color: white;
+        }
+
+        .lang-content {
+            display: none;
+        }
+
+        .lang-content.active {
+            display: block;
+        }
+
         @media (max-width: 768px) {
             header {
                 padding: 40px 20px;
@@ -241,180 +283,379 @@
             .intro h2, .faq-section h2 {
                 font-size: 1.5em;
             }
+
+            .language-switcher {
+                top: 10px;
+                right: 10px;
+            }
+
+            .language-switcher button {
+                padding: 8px 15px;
+                font-size: 0.85em;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="language-switcher">
+        <button onclick="switchLanguage('en')" id="btn-en" class="active">English</button>
+        <button onclick="switchLanguage('zh')" id="btn-zh">繁體中文</button>
+    </div>
+
     <div class="container">
         <header>
-            <h1>🎫 How to Use Mezzofy NFC Coupons</h1>
-            <p>Your complete guide to tapping, claiming, and redeeming digital coupons</p>
+            <div class="lang-content lang-en active">
+                <h1>🎫 How to Use Mezzofy NFC Coupons</h1>
+                <p>Your complete guide to tapping, claiming, and redeeming digital coupons</p>
+            </div>
+            <div class="lang-content lang-zh">
+                <h1>🎫 如何使用 Mezzofy NFC 優惠券</h1>
+                <p>完整指南：點擊、領取和兌換數位優惠券</p>
+            </div>
         </header>
 
         <div class="content">
-            <div class="intro">
-                <h2>Welcome to the Future of Coupons!</h2>
-                <p>Mezzofy's NFC technology makes saving money easier than ever. Simply tap your phone on any Mezzofy NFC sticker or scan a QR code to unlock exclusive deals. Follow this simple guide to start saving today!</p>
+            <!-- ENGLISH CONTENT -->
+            <div class="lang-content lang-en active">
+                <div class="intro">
+                    <h2>Welcome to the Future of Coupons!</h2>
+                    <p>Mezzofy's NFC technology makes saving money easier than ever. Simply tap your phone on any Mezzofy NFC sticker or scan a QR code to unlock exclusive deals. Follow this simple guide to start saving today!</p>
+                </div>
+
+                <div class="step-section">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Enable NFC on Your Phone</h3>
+                            <p>Before you can tap and save, make sure NFC is enabled on your smartphone:</p>
+                            <ul>
+                                <li><strong>iPhone:</strong> NFC is always on for iPhone 7 and newer. No setup needed!</li>
+                                <li><strong>Android:</strong> Go to Settings → Connected Devices → Connection Preferences → NFC → Turn ON</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Tap Your Phone</h3>
+                            <p>Hold the back of your smartphone close to the NFC sticker (within 1-2 inches). You'll feel a vibration or hear a sound confirming the tap. Your phone will automatically open the coupon link in your browser.</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>View Coupon Details</h3>
+                            <p>Once the page loads, you'll see:</p>
+                            <ul>
+                                <li>The discount or offer details</li>
+                                <li>Expiration date and terms</li>
+                                <li>Participating merchant information</li>
+                                <li>A unique coupon code</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Claim Your Coupon (Two Ways)</h3>
+                            
+                            <p style="margin-bottom: 20px;"><strong>Option A: With Mezzofy Coupon Clipper App (Recommended)</strong></p>
+                            <p>For the best experience, download the <strong>Mezzofy Coupon Clipper</strong> app:</p>
+                            <ul>
+                                <li><strong>Seamless Collection:</strong> Tap any NFC coupon and it automatically saves to your app</li>
+                                <li><strong>No Personal Data Required:</strong> Start using immediately without sign-up</li>
+                                <li><strong>All Coupons in One Place:</strong> Easy access to your entire coupon collection</li>
+                                <li><strong>Instant Redemption:</strong> Show coupons directly from the app at checkout</li>
+                            </ul>
+                            
+                            <p style="margin-top: 25px; margin-bottom: 20px;"><strong>Option B: Without the App (Browser-Based)</strong></p>
+                            <p>Don't have the app yet? No problem! When you tap an NFC coupon:</p>
+                            <ul>
+                                <li>The coupon details page launches immediately in your browser</li>
+                                <li>View and use the coupon right away at checkout</li>
+                                <li><strong>Save Options:</strong> Optionally save to Apple Wallet, Google Wallet, or Samsung Wallet</li>
+                                <li><strong>Or Download the App:</strong> A convenient link to download Mezzofy Coupon Clipper for future use</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h3>Redeem at Checkout</h3>
+                            <p>When you're ready to use your coupon:</p>
+                            <ul>
+                                <li>Open your Mezzofy Coupon Clipper app or access the coupon from your device wallet</li>
+                                <li>Select the coupon you want to use</li>
+                                <li>Show the QR code or barcode to the merchant's scanner at checkout</li>
+                                <li>Watch your discount apply instantly!</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <h3>✨ Key Features of Mezzofy NFC Coupons</h3>
+                    <ul>
+                        <li><strong>Instant Access:</strong> No need to download apps before tapping – works directly in your browser</li>
+                        <li><strong>Privacy-Friendly:</strong> The Coupon Clipper app requires no personal data to use</li>
+                        <li><strong>Multiple Wallet Options:</strong> Save to Mezzofy, Apple Wallet, Google Wallet, or Samsung Wallet</li>
+                        <li><strong>No Printing Required:</strong> Completely paperless and eco-friendly</li>
+                        <li><strong>Real-Time Updates:</strong> Get notifications about new deals and expiring coupons</li>
+                        <li><strong>Multi-Portal Support:</strong> Works with B2C, C2C, and partner merchant systems</li>
+                    </ul>
+                </div>
+
+                <div class="tips-section">
+                    <h3>💡 Pro Tips for Maximum Savings</h3>
+                    <ul>
+                        <li><strong>Download the App:</strong> Get the Mezzofy Coupon Clipper for the fastest, most seamless experience</li>
+                        <li><strong>Enable Notifications:</strong> Never miss a deal – allow Mezzofy to send you alerts about new coupons and expiring offers</li>
+                        <li><strong>Check Expiration Dates:</strong> Use your coupons before they expire to maximize your savings</li>
+                        <li><strong>Stack Offers:</strong> Some merchants allow you to combine multiple coupons – check the terms!</li>
+                        <li><strong>Share with Friends:</strong> Use our C2C portal to trade or gift coupons you won't use</li>
+                        <li><strong>Follow Favorite Merchants:</strong> Get exclusive early access to their promotions</li>
+                    </ul>
+                </div>
+
+                <div class="faq-section">
+                    <h2>Frequently Asked Questions</h2>
+
+                    <div class="faq-item">
+                        <h4>Q: Do I need to download an app to use NFC coupons?</h4>
+                        <p>A: No! You can tap and view coupons directly in your mobile browser. However, downloading the Mezzofy Coupon Clipper app provides the best experience with automatic coupon collection and no personal data required.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h4>Q: What if my phone doesn't have NFC?</h4>
+                        <p>A: No problem! Every NFC coupon also has a QR code option. Simply open your camera app and scan the QR code to access the same coupon.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h4>Q: Does the Mezzofy Coupon Clipper app require personal information?</h4>
+                        <p>A: No! You can start using the app immediately without providing any personal data. It's designed for privacy and convenience.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h4>Q: Can I use a coupon multiple times?</h4>
+                        <p>A: It depends on the coupon terms. Most coupons are single-use, but some promotional offers allow multiple redemptions. Check the coupon details for specific information.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h4>Q: What happens if I tap a coupon but don't save it?</h4>
+                        <p>A: Without the app, you can still use the coupon immediately from the browser page. You can also save it to your device wallet (Apple, Google, or Samsung) or tap the same NFC sticker again later.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h4>Q: Can I transfer my coupons to someone else?</h4>
+                        <p>A: Yes! Through our C2C (Customer-to-Customer) portal, you can trade, gift, or sell unused coupons to other Mezzofy users.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h4>Q: What if the coupon doesn't work at checkout?</h4>
+                        <p>A: First, check that the coupon hasn't expired and that you're using it at a participating merchant. If issues persist, contact the merchant or Mezzofy customer support for assistance.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h4>Q: Which wallet should I use to save coupons?</h4>
+                        <p>A: We recommend the Mezzofy Coupon Clipper app for the best experience. However, you can also save to Apple Wallet (iPhone), Google Wallet (Android), or Samsung Wallet depending on your device.</p>
+                    </div>
+                </div>
+
+                <div class="support-section">
+                    <h3>Need More Help?</h3>
+                    <p>Our customer support team is here to assist you!</p>
+                    <p>Contact us at: <a href="mailto:support@mezzofy.com">support@mezzofy.com</a></p>
+                    <p>Visit our Help Center for more guides and tutorials</p>
+                </div>
             </div>
 
-            <div class="step-section">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3>Enable NFC on Your Phone</h3>
-                        <p>Before you can tap and save, make sure NFC is enabled on your smartphone:</p>
-                        <ul>
-                            <li><strong>iPhone:</strong> NFC is always on for iPhone 7 and newer. No setup needed!</li>
-                            <li><strong>Android:</strong> Go to Settings → Connected Devices → Connection Preferences → NFC → Turn ON</li>
-                        </ul>
+            <!-- TRADITIONAL CHINESE CONTENT -->
+            <div class="lang-content lang-zh">
+                <div class="intro">
+                    <h2>歡迎來到優惠券的未來！</h2>
+                    <p>Mezzofy 的 NFC 技術讓省錢變得前所未有的簡單。只需將手機輕觸任何 Mezzofy NFC 貼紙或掃描 QR 碼即可解鎖專屬優惠。按照這份簡單的指南，今天就開始省錢吧！</p>
+                </div>
+
+                <div class="step-section">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>在您的手機上啟用 NFC</h3>
+                            <p>在您可以輕觸和儲存之前，請確保您的智慧型手機已啟用 NFC：</p>
+                            <ul>
+                                <li><strong>iPhone：</strong>iPhone 7 及更新機型的 NFC 始終開啟。無需設定！</li>
+                                <li><strong>Android：</strong>前往「設定」→「連接的裝置」→「連線偏好設定」→「NFC」→ 開啟</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>輕觸您的手機</h3>
+                            <p>將智慧型手機背面靠近 NFC 貼紙（距離 1-2 英寸內）。您會感到震動或聽到確認輕觸的聲音。您的手機將自動在瀏覽器中開啟優惠券連結。</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>查看優惠券詳情</h3>
+                            <p>頁面載入後，您將看到：</p>
+                            <ul>
+                                <li>折扣或優惠詳情</li>
+                                <li>到期日期和條款</li>
+                                <li>參與商家資訊</li>
+                                <li>唯一的優惠券代碼</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>領取您的優惠券（兩種方式）</h3>
+                            
+                            <p style="margin-bottom: 20px;"><strong>選項 A：使用 Mezzofy 優惠券收集器應用程式（推薦）</strong></p>
+                            <p>為獲得最佳體驗，請下載 <strong>Mezzofy 優惠券收集器</strong>應用程式：</p>
+                            <ul>
+                                <li><strong>無縫收集：</strong>輕觸任何 NFC 優惠券，它會自動儲存到您的應用程式</li>
+                                <li><strong>無需個人資料：</strong>無需註冊即可立即開始使用</li>
+                                <li><strong>所有優惠券集中管理：</strong>輕鬆存取您的整個優惠券收藏</li>
+                                <li><strong>即時兌換：</strong>在結帳時直接從應用程式顯示優惠券</li>
+                            </ul>
+                            
+                            <p style="margin-top: 25px; margin-bottom: 20px;"><strong>選項 B：不使用應用程式（基於瀏覽器）</strong></p>
+                            <p>還沒有應用程式？沒問題！當您輕觸 NFC 優惠券時：</p>
+                            <ul>
+                                <li>優惠券詳情頁面立即在您的瀏覽器中啟動</li>
+                                <li>在結帳時立即查看和使用優惠券</li>
+                                <li><strong>儲存選項：</strong>可選擇儲存到 Apple 錢包、Google 錢包或 Samsung 錢包</li>
+                                <li><strong>或下載應用程式：</strong>提供便捷連結下載 Mezzofy 優惠券收集器以供日後使用</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h3>在結帳時兌換</h3>
+                            <p>當您準備使用優惠券時：</p>
+                            <ul>
+                                <li>開啟您的 Mezzofy 優惠券收集器應用程式或從您的裝置錢包存取優惠券</li>
+                                <li>選擇您要使用的優惠券</li>
+                                <li>在結帳時向商家的掃描器顯示 QR 碼或條碼</li>
+                                <li>觀看您的折扣立即生效！</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>Find a Mezzofy NFC Coupon</h3>
-                        <p>Look for Mezzofy NFC stickers at participating merchants, on product displays, in-store promotions, or marketing materials. You can also scan QR codes if NFC isn't available.</p>
+                <div class="highlight-box">
+                    <h3>✨ Mezzofy NFC 優惠券的主要功能</h3>
+                    <ul>
+                        <li><strong>即時存取：</strong>無需在輕觸前下載應用程式 — 直接在瀏覽器中使用</li>
+                        <li><strong>保護隱私：</strong>優惠券收集器應用程式無需個人資料即可使用</li>
+                        <li><strong>多種錢包選項：</strong>儲存到 Mezzofy、Apple 錢包、Google 錢包或 Samsung 錢包</li>
+                        <li><strong>無需列印：</strong>完全無紙化且環保</li>
+                        <li><strong>即時更新：</strong>獲取有關新優惠和即將到期優惠券的通知</li>
+                        <li><strong>多入口支援：</strong>與 B2C、C2C 和合作商家系統配合使用</li>
+                    </ul>
+                </div>
+
+                <div class="tips-section">
+                    <h3>💡 最大化省錢的專業提示</h3>
+                    <ul>
+                        <li><strong>下載應用程式：</strong>獲取 Mezzofy 優惠券收集器以獲得最快、最無縫的體驗</li>
+                        <li><strong>啟用通知：</strong>永不錯過優惠 — 允許 Mezzofy 向您發送有關新優惠券和即將到期優惠的提醒</li>
+                        <li><strong>檢查到期日期：</strong>在優惠券到期前使用以最大化您的省錢</li>
+                        <li><strong>疊加優惠：</strong>某些商家允許您合併多張優惠券 — 查看條款！</li>
+                        <li><strong>與朋友分享：</strong>使用我們的 C2C 入口交易或贈送您不會使用的優惠券</li>
+                        <li><strong>關注喜愛的商家：</strong>獲得他們促銷活動的專屬早期存取權</li>
+                    </ul>
+                </div>
+
+                <div class="faq-section">
+                    <h2>常見問題</h2>
+
+                    <div class="faq-item">
+                        <h4>問：我需要下載應用程式才能使用 NFC 優惠券嗎？</h4>
+                        <p>答：不需要！您可以直接在行動瀏覽器中輕觸和查看優惠券。但是，下載 Mezzofy 優惠券收集器應用程式可提供最佳體驗，具有自動優惠券收集功能且無需個人資料。</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h4>問：如果我的手機沒有 NFC 怎麼辦？</h4>
+                        <p>答：沒問題！每個 NFC 優惠券都有 QR 碼選項。只需打開相機應用程式並掃描 QR 碼即可存取相同的優惠券。</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h4>問：Mezzofy 優惠券收集器應用程式需要個人資訊嗎？</h4>
+                        <p>答：不需要！您可以立即開始使用該應用程式，無需提供任何個人資料。它專為隱私和便利而設計。</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h4>問：我可以多次使用優惠券嗎？</h4>
+                        <p>答：這取決於優惠券條款。大多數優惠券是一次性使用，但某些促銷優惠允許多次兌換。查看優惠券詳情以獲取具體資訊。</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h4>問：如果我輕觸了優惠券但沒有儲存它會怎樣？</h4>
+                        <p>答：沒有應用程式，您仍然可以立即從瀏覽器頁面使用優惠券。您也可以將其儲存到您的裝置錢包（Apple、Google 或 Samsung）或稍後再次輕觸相同的 NFC 貼紙。</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h4>問：我可以將優惠券轉讓給其他人嗎？</h4>
+                        <p>答：可以！透過我們的 C2C（客戶對客戶）入口，您可以與其他 Mezzofy 用戶交易、贈送或出售未使用的優惠券。</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h4>問：如果優惠券在結帳時無法使用怎麼辦？</h4>
+                        <p>答：首先，檢查優惠券是否尚未到期以及您是否在參與的商家使用。如果問題持續存在，請聯繫商家或 Mezzofy 客戶支援尋求協助。</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h4>問：我應該使用哪個錢包來儲存優惠券？</h4>
+                        <p>答：我們建議使用 Mezzofy 優惠券收集器應用程式以獲得最佳體驗。但是，您也可以根據您的裝置儲存到 Apple 錢包（iPhone）、Google 錢包（Android）或 Samsung 錢包。</p>
                     </div>
                 </div>
 
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>Tap Your Phone</h3>
-                        <p>Hold the back of your smartphone close to the NFC sticker (within 1-2 inches). You'll feel a vibration or hear a sound confirming the tap. Your phone will automatically open the coupon link in your browser.</p>
-                    </div>
+                <div class="support-section">
+                    <h3>需要更多協助？</h3>
+                    <p>我們的客戶支援團隊隨時為您提供協助！</p>
+                    <p>聯繫我們：<a href="mailto:support@mezzofy.com">support@mezzofy.com</a></p>
+                    <p>造訪我們的幫助中心以獲取更多指南和教學</p>
                 </div>
-
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <div class="step-content">
-                        <h3>View Coupon Details</h3>
-                        <p>Once the page loads, you'll see:</p>
-                        <ul>
-                            <li>The discount or offer details</li>
-                            <li>Expiration date and terms</li>
-                            <li>Participating merchant information</li>
-                            <li>A unique coupon code</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="step">
-                    <div class="step-number">5</div>
-                    <div class="step-content">
-                        <h3>Claim Your Coupon (Two Ways)</h3>
-                        
-                        <p style="margin-bottom: 20px;"><strong>Option A: With Mezzofy Coupon Clipper App (Recommended)</strong></p>
-                        <p>For the best experience, download the <strong>Mezzofy Coupon Clipper</strong> app:</p>
-                        <ul>
-                            <li><strong>Seamless Collection:</strong> Tap any NFC coupon and it automatically saves to your app</li>
-                            <li><strong>No Personal Data Required:</strong> Start using immediately without sign-up</li>
-                            <li><strong>All Coupons in One Place:</strong> Easy access to your entire coupon collection</li>
-                            <li><strong>Instant Redemption:</strong> Show coupons directly from the app at checkout</li>
-                        </ul>
-                        
-                        <p style="margin-top: 25px; margin-bottom: 20px;"><strong>Option B: Without the App (Browser-Based)</strong></p>
-                        <p>Don't have the app yet? No problem! When you tap an NFC coupon:</p>
-                        <ul>
-                            <li>The coupon details page launches immediately in your browser</li>
-                            <li>View and use the coupon right away at checkout</li>
-                            <li><strong>Save Options:</strong> Optionally save to Apple Wallet, Google Wallet, or Samsung Wallet</li>
-                            <li><strong>Or Download the App:</strong> A convenient link to download Mezzofy Coupon Clipper for future use</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="step">
-                    <div class="step-number">6</div>
-                    <div class="step-content">
-                        <h3>Redeem at Checkout</h3>
-                        <p>When you're ready to use your coupon:</p>
-                        <ul>
-                            <li>Open your Mezzofy Coupon Clipper app or access the coupon from your device wallet</li>
-                            <li>Select the coupon you want to use</li>
-                            <li>Show the QR code or barcode to the merchant's scanner at checkout</li>
-                            <li>Watch your discount apply instantly!</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="highlight-box">
-                <h3>✨ Key Features of Mezzofy NFC Coupons</h3>
-                <ul>
-                    <li><strong>Instant Access:</strong> No need to download apps before tapping – works directly in your browser</li>
-                    <li><strong>Privacy-Friendly:</strong> The Coupon Clipper app requires no personal data to use</li>
-                    <li><strong>Multiple Wallet Options:</strong> Save to Mezzofy, Apple Wallet, Google Wallet, or Samsung Wallet</li>
-                    <li><strong>No Printing Required:</strong> Completely paperless and eco-friendly</li>
-                    <li><strong>Real-Time Updates:</strong> Get notifications about new deals and expiring coupons</li>
-                    <li><strong>Multi-Portal Support:</strong> Works with B2C, C2C, and partner merchant systems</li>
-                </ul>
-            </div>
-
-            <div class="tips-section">
-                <h3>💡 Pro Tips for Maximum Savings</h3>
-                <ul>
-                    <li><strong>Download the App:</strong> Get the Mezzofy Coupon Clipper for the fastest, most seamless experience</li>
-                    <li><strong>Enable Notifications:</strong> Never miss a deal – allow Mezzofy to send you alerts about new coupons and expiring offers</li>
-                    <li><strong>Check Expiration Dates:</strong> Use your coupons before they expire to maximize your savings</li>
-                    <li><strong>Stack Offers:</strong> Some merchants allow you to combine multiple coupons – check the terms!</li>
-                    <li><strong>Share with Friends:</strong> Use our C2C portal to trade or gift coupons you won't use</li>
-                    <li><strong>Follow Favorite Merchants:</strong> Get exclusive early access to their promotions</li>
-                </ul>
-            </div>
-
-            <div class="faq-section">
-                <h2>Frequently Asked Questions</h2>
-
-                <div class="faq-item">
-                    <h4>Q: Do I need to download an app to use NFC coupons?</h4>
-                    <p>A: No! You can tap and view coupons directly in your mobile browser. However, downloading the Mezzofy Coupon Clipper app provides the best experience with automatic coupon collection and no personal data required.</p>
-                </div>
-
-                <div class="faq-item">
-                    <h4>Q: What if my phone doesn't have NFC?</h4>
-                    <p>A: No problem! Every NFC coupon also has a QR code option. Simply open your camera app and scan the QR code to access the same coupon.</p>
-                </div>
-
-                <div class="faq-item">
-                    <h4>Q: Does the Mezzofy Coupon Clipper app require personal information?</h4>
-                    <p>A: No! You can start using the app immediately without providing any personal data. It's designed for privacy and convenience.</p>
-                </div>
-
-                <div class="faq-item">
-                    <h4>Q: Can I use a coupon multiple times?</h4>
-                    <p>A: It depends on the coupon terms. Most coupons are single-use, but some promotional offers allow multiple redemptions. Check the coupon details for specific information.</p>
-                </div>
-
-                <div class="faq-item">
-                    <h4>Q: What happens if I tap a coupon but don't save it?</h4>
-                    <p>A: Without the app, you can still use the coupon immediately from the browser page. You can also save it to your device wallet (Apple, Google, or Samsung) or tap the same NFC sticker again later.</p>
-                </div>
-
-                <div class="faq-item">
-                    <h4>Q: Can I transfer my coupons to someone else?</h4>
-                    <p>A: Yes! Through our C2C (Customer-to-Customer) portal, you can trade, gift, or sell unused coupons to other Mezzofy users.</p>
-                </div>
-
-                <div class="faq-item">
-                    <h4>Q: What if the coupon doesn't work at checkout?</h4>
-                    <p>A: First, check that the coupon hasn't expired and that you're using it at a participating merchant. If issues persist, contact the merchant or Mezzofy customer support for assistance.</p>
-                </div>
-
-                <div class="faq-item">
-                    <h4>Q: Which wallet should I use to save coupons?</h4>
-                    <p>A: We recommend the Mezzofy Coupon Clipper app for the best experience. However, you can also save to Apple Wallet (iPhone), Google Wallet (Android), or Samsung Wallet depending on your device.</p>
-                </div>
-            </div>
-
-            <div class="support-section">
-                <h3>Need More Help?</h3>
-                <p>Our customer support team is here to assist you!</p>
-                <p>Contact us at: <a href="mailto:support@mezzofy.com">support@mezzofy.com</a></p>
-                <p>Visit our Help Center for more guides and tutorials</p>
             </div>
         </div>
     </div>
+
+    <script>
+        function switchLanguage(lang) {
+            // Hide all language content
+            const allContent = document.querySelectorAll('.lang-content');
+            allContent.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Show selected language content
+            const selectedContent = document.querySelectorAll('.lang-' + lang);
+            selectedContent.forEach(content => {
+                content.classList.add('active');
+            });
+
+            // Update button states
+            document.querySelectorAll('.language-switcher button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.getElementById('btn-' + lang).classList.add('active');
+
+            // Update page language attribute
+            document.documentElement.lang = lang === 'zh' ? 'zh-TW' : 'en';
+        }
+    </script>
 </body>
 </html>
